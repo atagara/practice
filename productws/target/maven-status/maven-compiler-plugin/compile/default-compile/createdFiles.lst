@@ -1,0 +1,7 @@
+com/company/ws/product/dao/ProductDAOImpl.class
+com/company/ws/product/ProductWS.class
+com/company/ws/product/ProductWSImpl.class
+com/company/ws/product/dao/mappers/ProductRowMapper.class
+com/company/ws/product/entity/Product.class
+com/company/ws/product/dao/ProductDAO.class
+com/company/ws/product/dto/Product.class

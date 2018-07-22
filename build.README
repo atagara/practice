@@ -1,0 +1,11 @@
+IDEA
+To generate idea files(.iml)
+cd into eatfresh-server folder and run ./gradlew idea     --will download all required dependencies
+
+Eclipse
+To generate idea files(.classpath and .project)
+cd into eatfresh-server folder and run ./gradlew cleanEclipse eclipse     --will download all required dependencies
+
+Build
+cd into eatfresh-server folder and run ./gradlew build
+ 

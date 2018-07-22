@@ -1,0 +1,8 @@
+include ':model'
+include ':api'
+include ':web-service'
+
+rootProject.name = 'eatfresh-server'
+rootProject.children.each { subproject ->
+  project("$subproject").name = "$rootProject.name" + '-' + project("$subproject").name
+}

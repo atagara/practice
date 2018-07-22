@@ -1,0 +1,31 @@
+apply plugin: 'war'
+apply plugin: "org.springframework.boot"
+
+war {
+    baseName = 'eatFresh'
+    version =  '0.0.1'
+}
+dependencies {
+	compile project(":eatfresh-server-model")
+	compile project(":eatfresh-server-api")
+	compile("org.springframework.boot:spring-boot-devtools")
+	compile("org.springframework.boot:spring-boot-starter-web")
+	compile group: 'org.mongodb', name: 'mongodb-driver', version: '3.2.2'
+	// https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
+	//compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
+	//testCompile("org.junit.jupiter:junit-jupiter-engine:5.0.0-M4")
+	//testCompile group: 'org.junit.platform', name: 'junit-platform-launcher', version: '1.0.1'
+	// https://mvnrepository.com/artifact/org.junit.platform/junit-platform-runner
+	//testCompile group: 'org.junit.platform', name: 'junit-platform-runner', version: '1.0.0-M4'
+	testCompile"org.junit.jupiter:junit-jupiter-api:5.0.0"
+	testCompile"org.junit.jupiter:junit-jupiter-params:5.0.0"
+	testCompile"org.junit.jupiter:junit-jupiter-engine:5.0.0"
+	testCompile"org.junit.platform:junit-platform-launcher:1.0.0"
+	providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+}
+ext.mainClassName = 'com.pascher.StartUp'
+bootRepackage {
+	mainClass = 'com.pascher.StartUp'
+	enabled = true
+	executable = true
+}
