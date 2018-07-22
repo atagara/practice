@@ -1,0 +1,10 @@
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+allprojects {
+    task hello {
+        doLast { task ->
+            println "I'm $task.project.name"
+        }
+    }
+}
