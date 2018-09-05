@@ -19,11 +19,12 @@ public class ProductResource {
 
 	@RequestMapping(method = RequestMethod.POST, value="/product/create")
 	public ResponseEntity<Product> createProduct(@RequestBody final Product product){
+		System.out.println(product.toString());
 		productService.add(product);
 		return new ResponseEntity<Product>(HttpStatus.CREATED);
 	}
 
-	@RequestMapping(method = RequestMethod.PUT, value="/product/update")
+	@RequestMapping(method = RequestMethod.PUT, value="/product/update/{name}/{price}")
 	public ResponseEntity<Product> updateProductPrice(@PathVariable("name")String name, @PathVariable("price")double price){
 		productService.update(name, price);
 		return new ResponseEntity<Product>(HttpStatus.ACCEPTED);

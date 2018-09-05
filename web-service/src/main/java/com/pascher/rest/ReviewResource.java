@@ -7,9 +7,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
-public class ReviewResource {
-	@Autowired
+//@RestController
+public class ReviewResource { /*
+//	@Autowired
 	private ReviewWS reviewService;
 	
 	@RequestMapping(method = RequestMethod.GET, value="/review/{name}")
@@ -33,5 +33,5 @@ public class ReviewResource {
 	public ResponseEntity<Review> deleteReview(@PathVariable("name")String name){
 		reviewService.delete(name);
 		return new ResponseEntity<Review>(HttpStatus.OK);
-	}
+	} */
 }

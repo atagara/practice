@@ -9,9 +9,8 @@ buildscript {
 	}
 	
 	dependencies {
-        classpath "io.spring.gradle:dependency-management-plugin:1.0.3.RELEASE"
-
-        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.5.4.RELEASE"	
+		classpath "io.spring.gradle:dependency-management-plugin:1.0.6.RELEASE"
+		classpath "org.springframework.boot:spring-boot-gradle-plugin:2.0.4.RELEASE"
 	}
 }
 
@@ -27,7 +26,7 @@ subprojects {
 	dependencyManagement {
 	     imports {
 	          mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Brixton.SR6'
-	          mavenBom 'org.springframework.boot:spring-boot-starter-parent:1.4.1.RELEASE'
+	          mavenBom 'org.springframework.boot:spring-boot-starter-parent:2.0.4.RELEASE'
 	          mavenBom 'com.amazonaws:aws-java-sdk-bom:1.11.100'
 	     }	
 	}

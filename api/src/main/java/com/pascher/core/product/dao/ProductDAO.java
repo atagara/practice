@@ -5,10 +5,12 @@ import com.pascher.core.product.Product;
 public interface ProductDAO {
 
 	void create(Product product) throws Exception;
+	
+	boolean update(Product product);
 
-	void update(String name, double price) throws Exception;
+	boolean update(String name, double price) throws Exception;
 
-	void delete(String name) throws Exception;
+	String delete(String name) throws Exception;
 
 	String find(String name) throws Exception;
 }

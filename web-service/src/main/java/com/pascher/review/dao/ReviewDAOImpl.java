@@ -12,7 +12,7 @@ import com.pascher.db.MongoDBConnection;
 import org.bson.Document;
 import org.springframework.stereotype.Repository;
 
-@Repository
+//@Repository
 public class ReviewDAOImpl implements ReviewDAO {
 
 	@Override

@@ -10,7 +10,18 @@ dependencies {
 	compile project(":eatfresh-server-api")
 	compile("org.springframework.boot:spring-boot-devtools")
 	compile("org.springframework.boot:spring-boot-starter-web")
-	compile group: 'org.mongodb', name: 'mongodb-driver', version: '3.2.2'
+//	compile group: 'org.mongodb', name: 'mongodb-driver', version: '3.2.2'
+	
+//	compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.11.1'
+//	compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.11.1'
+//	compile 'log4j:log4j:2.11.1'
+//	compile 'commons-logging:commons-logging:1.2'
+	compile ('org.springframework.boot:spring-boot-starter-web'){
+		exclude module: 'org.springframework.boot:spring-boot-starter-logging'
+	}
+//	compile ('org.springframework.boot:spring-boot-starter-log4j')
+	compile 'org.springframework.data:spring-data-mongodb:2.0.9.RELEASE'
+	
 	// https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
 	//compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
 	//testCompile("org.junit.jupiter:junit-jupiter-engine:5.0.0-M4")
@@ -24,8 +35,9 @@ dependencies {
 	providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
 }
 ext.mainClassName = 'com.pascher.StartUp'
-bootRepackage {
-	mainClass = 'com.pascher.StartUp'
+bootWar {
+	mainClassName = 'com.pascher.StartUp'
 	enabled = true
-	executable = true
+	//executable = true
+	launchScript()
 }
