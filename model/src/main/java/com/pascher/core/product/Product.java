@@ -19,7 +19,26 @@ public class Product {
 	private String commodityType;	
 	private Dimension[] dimensions;	
 	
-	private ProductDetails productDetails;
+	private Weight weight;
+	private List<String> images;
+	
+	public Weight getWeight() {
+		return weight;
+	}
+	
+	public void setWeight(Weight weight) {
+		this.weight = weight;
+	}
+	
+	public List<String> getImages() {
+		return images;
+	}
+	
+	public void setImages(List<String> images) {
+		this.images = images;
+	}
+	
+//	private ProductDetails productDetails;
 	
 	public String getName() {
 		return name;
@@ -60,13 +79,13 @@ public class Product {
 		this.id = id;
 	}
 	
-	public ProductDetails getProductDetails() {
-		return productDetails;
-	}
-	
-	public void setProductDetails(ProductDetails productDetails) {
-		this.productDetails = productDetails;
-	}
+//	public ProductDetails getProductDetails() {
+//		return productDetails;
+//	}
+//	
+//	public void setProductDetails(ProductDetails productDetails) {
+//		this.productDetails = productDetails;
+//	}
 	
 	public int hashCode() {
 		final int prime = 31;
@@ -78,7 +97,7 @@ public class Product {
 		result = prime * result + Arrays.hashCode(dimensions);
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + Arrays.hashCode(price);
-		result = prime * result + ((productDetails.getWeight() == null) ? 0 : productDetails.getWeight().hashCode());
+//		result = prime * result + ((productDetails.getWeight() == null) ? 0 : productDetails.getWeight().hashCode());
 		return result;
 	}
 
@@ -109,18 +128,19 @@ public class Product {
 			return false;
 		if (!Arrays.equals(price, other.price))
 			return false;
-		if (productDetails.getWeight() == null) {
-			if (other.getProductDetails().getWeight() != null)
-				return false;
-		} else if (!productDetails.getWeight().equals(other.getProductDetails().getWeight()))
-			return false;
+//		if (productDetails.getWeight() == null) {
+//			if (other.getProductDetails().getWeight() != null)
+//				return false;
+//		} else if (!productDetails.getWeight().equals(other.getProductDetails().getWeight()))
+//			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
 		return "Product [name=" + name + ", description=" + description + ", price=" + Arrays.toString(price)
 				+ ", commodityType=" + commodityType + ", dimensions=" + Arrays.toString(dimensions) + ", weight="
-				+ weight + "]";
+//				+ productDetails.getWeight() 
+				+ "]";
 	}
 	
 }
