@@ -3,12 +3,31 @@ package com.pascher.core.product;
 import com.pascher.core.dimension.Dimension;
 import com.pascher.core.price.Price;
 import com.pascher.product.dao.ProductDAOImpl;
+import com.pascher.product.dao.ProductDAOSDMongo;
 import com.pascher.core.weight.Weight;
+
+import java.util.List;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 
+//@ComponentScan(basePackages= {"com.pascher"})
 public class TestProduct {
-    @Test
+	
+	@Autowired
+	private ProductDAOSDMongo productDAOSDMongo;
+	
+	@Test
+	public void testSD() {
+		List<Product> productList =  productDAOSDMongo.findAll();
+		System.out.println("Number of Products = " + productList.size());
+		
+	}
+	
+    //@Test
+	/*
     public void testProductCreationUpdateAndDelete() throws Exception{
         Product newProduct = new Product();
         newProduct.setName("iphone");
@@ -48,5 +67,6 @@ public class TestProduct {
 //        pdao.delete("iphone");
         Assertions.assertNull(pdao.find("iphone"));
     }
+    */
 }
 
